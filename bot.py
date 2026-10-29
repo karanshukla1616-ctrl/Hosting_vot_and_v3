@@ -3,8 +3,8 @@ import telebot
 from telebot.types import InlineKeyboardButton, InlineKeyboardMarkup
 
 # Bot Token aur Admin ID yahan dalein
-TOKEN = "YOUR_BOT_TOKEN_HERE"
-ADMIN_ID = 123456789  # Apna Telegram Numeric User ID yahan dalein
+TOKEN = "9113864833:AAFIVUXUCS4Rv-3Yitl6KRd_aTCApbY3BC0"
+ADMIN_ID = 8680144387 # Apna Telegram Numeric User ID yahan dalein
 
 bot = telebot.TeleBot(TOKEN)
 

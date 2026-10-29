@@ -3,8 +3,8 @@ import telebot
 from telebot.types import InlineKeyboardButton, InlineKeyboardMarkup
 
 # ================= CONFIGURATION =================
-TOKEN = "9113864833:AAFIVUXUCS4Rv-3Yitl6KRd_aTCApbY3BC0"  # Apna BotFather ka token yahan dalein
-ADMIN_ID = 8680144387 # Apna Telegram Numeric User ID yahan dalein
+TOKEN = "9240925761:AAH2xgqZxQqo8Ray7Hi3IE2VadVrHY55EQg"  # Apna BotFather ka token yahan dalein
+ADMIN_ID = 8680144387  # Apna Telegram Numeric User ID yahan dalein
 
 bot = telebot.TeleBot(TOKEN)
 
@@ -224,14 +224,12 @@ def toggle_link_blocker(message):
     and (m.text or m.caption)
 )
 def check_links(message):
-  # Check agar link blocker ON hai
   cursor.execute(
       "SELECT status FROM link_blocker WHERE chat_id = ?", (message.chat.id,)
   )
   res = cursor.fetchone()
 
   if res and res[0] == "ON":
-    # Agar user admin nahi hai
     if not is_admin(message.chat.id, message.from_user.id):
       text = message.text or message.caption
       if "http://" in text or "https://" in text or "t.me/" in text:
@@ -252,7 +250,7 @@ def check_links(message):
     content_types=["document", "photo", "video"],
     func=lambda m: m.chat.type == "private",
 )
-handle_file_hosting(message):
+def handle_file_hosting(message):
   file_id, f_type, f_name = "", "", "File"
 
   if message.document:
